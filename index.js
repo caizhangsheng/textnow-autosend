@@ -14,6 +14,7 @@ const actionFunc = async (username, password, recipient, message) => {
       headless: true,
     });
     page = await browser.newPage();
+    await page.setDefaultNavigationTimeout(1200000);
     const client = await page.target().createCDPSession();
     let cookies = null;
 
